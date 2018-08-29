@@ -1,0 +1,86 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+input:focus, button:focus
+{
+	outline: none;
+}
+
+body
+{
+	background: rgb(0,200,255);
+}
+
+.container
+{
+	width: 35vw;
+	height: 60vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: white;
+	box-shadow: 2px 2px 2px white;
+	border-radius: 5px;
+}
+
+.container > h1
+{
+	text-align: center;
+	transform: translateY(5vh);
+	font-size: 45px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.container > #username
+{
+	position: relative;
+	top: 10vh;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 70%;
+	height: 10%;
+	padding: 8px;
+	background: #eee;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	box-shadow: none;
+	border: none;
+	font-size: 20px;
+	border-radius: 5px;
+}
+
+.container > #pwd
+{
+	position: relative;
+	top: 15vh;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 70%;
+	height: 10%;
+	padding: 8px;
+	background: #eee;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	box-shadow: none;
+	border: none;
+	font-size: 20px;
+	border-radius: 5px;
+}
+
+.container > #submit
+{
+	position: absolute;
+	top: 45vh;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 70%;
+	height: 10%;
+	background: rgb(0,101,255);
+	font-size: 25px;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+}

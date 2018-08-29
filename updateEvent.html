@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Event</title>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="updateEvent.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <img src="bsom.png">
+        <h1>BOSM Admin Panel</h1>
+        <button onclick="mainApp.logOut()">Log Out</button>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="file:///C:/html_css_pages/web%20portal/homePage.html" class="home">Home</a>
+        <a href="file:///C:/html_css_pages/web%20portal/registerEvents.html" class="register-events">Register Events</a>
+        <a href="file:///C:/html_css_pages/web%20portal/uploadResults.html" class="upload-results">Upload Results</a>
+        <a href="file:///C:/html_css_pages/web%20portal/updateEvent.html" class="update-event">Update Event</a>
+        <a href="#" class="update-result">Update Result</a>
+        <a href="file:///C:/html_css_pages/web%20portal/displayMessage.html" class="display-message">Display Message</a>
+        <a href="file:///C:/html_css_pages/web%20portal/registerCollege.html" class="register-college">Register College</a>
+        <a href="file:///C:/html_css_pages/web%20portal/registerVenue.html" class="register-venue">Register Venue</a>
+        <a href="#" class="delete-event">Delete Event</a>
+    </div>
+
+    <div class="container" id="registerEventsPage" style="width: 70vw;">
+        <h2>Update Event</h2>
+        <form>
+            <div class="form-group" id="selectSpo">
+                <label for="selectSport">Select Sport:</label>
+                <select class="form-control" id="selectSport">
+                    <option value="Taekwondo">Taekwondo</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Swimming">Swimming</option>
+                    <option value="Badminton">Badminton</option>
+                    <option value="Basketball">Basketball</option>
+                    <option value="Cricket">Cricket</option>
+                    <option value="Football">Football</option>
+                    <option value="Hockey">Hockey</option>
+                    <option value="Squash">Squash</option>
+                    <option value="Tennis">Tennis</option>
+                    <option value="TableTennis">Table Tennis</option>
+                    <option value="Volleyball">Volleyball</option>
+                    <option value="Carrom">Carrom</option>
+                    <option value="Chess">Chess</option>
+                    <option value="Powerlifting">Powerlifting</option>
+                    <option value="Pool">Pool</option>
+                    <option value="Online">Online</option>
+                    <option value="Misc">Misc</option>
+                </select>
+            </div>
+
+        </form>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+
+    <script type="text/javascript" src="fireBase.js"></script>
+    <script type="text/javascript" src="registerEvents.js"></script>
+
+</body>
+</html>

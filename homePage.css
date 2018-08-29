@@ -1,0 +1,259 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.header
+{
+    width: 100vw;
+    height: 12vh;
+    background: #eee;
+    z-index: 2;
+}
+
+.header > img
+{
+    width: 5.7vw;
+}
+
+.header > h1
+{
+    position: absolute;
+    top: 1vh;
+    left: 7vw;
+    font-size: 25px;
+}
+
+.header > button
+{
+    position: absolute;
+    left: 90vw;
+    top: 3vh;
+    width: 6vw;
+    height: 5vh;
+    border: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    background: rgb(51,51,51);
+    color: white;
+    box-shadow: 2px 2px 2px grey;
+}
+
+.container
+{
+    position: absolute;
+    left: 20vw;
+}
+
+.sidenav
+{
+    min-height: 88vh;
+    max-height: 115vh;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    position: absolute;
+    top: 12vh;
+    left: 0;
+    background-color: rgb(51,51,51);
+    overflow-x: hidden;
+    padding-top: 10px;
+}
+
+.sidenav a
+{
+    padding-top: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    color: black;
+    width: 210px;
+    text-align: center;
+    margin-bottom: 4px;
+    height: 8vh;
+}
+
+.sidenav > a:nth-child(1)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(2)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(3)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(4)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(5)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(6)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(7)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(8)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(9)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.container
+{
+    position: absolute;
+    top: 15vh;
+    left: 25vw;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    overflow-y: hidden;
+}
+
+.container > h4
+{
+    overflow-y: hidden;
+}
+
+@media screen and (max-width: 1050px)
+{
+    .header > img
+    {
+        width: 15vw;
+    }
+
+    .header > h1
+    {
+        position: absolute;
+        top: 3vh;
+        left: 15vw;
+        font-size: 30px;
+    }
+
+    .header > button
+    {
+        width: 12vw;
+        position: absolute;
+        left: 85vw;
+        font-size: 30px;
+    }
+
+    .sidenav > a
+    {
+        font-size: 25px;
+        position: relative;
+        padding-top: 3vh;
+    }
+
+    .container
+    {
+        position: absolute;
+        left: 40vw;
+        overflow-y: hidden;
+        transform: scale(1.5);
+    }
+}
+
+@media screen and (max-width: 450px)
+{
+    .header > h1
+    {
+        font-size: 15px;
+    }
+
+    .header > button
+    {
+        font-size: 15px;
+        width: 15vw;
+    }
+
+    .sidenav
+    {
+        width: 130px;
+    }
+
+    .sidenav > a
+    {
+        width: 90%;
+        font-size: 14px;
+        padding-top: 2vh;
+    }
+
+    .container
+    {
+        transform: scale(1);
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 400px)
+{
+    .container > h1
+    {
+        font-size: 20px;
+    }
+
+    .container > h4
+    {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 325px)
+{
+    .header > button
+    {
+        width: 20vw;
+        position: absolute;
+        left: 70vw;
+    }
+
+    .sidenav
+    {
+        width: 120px;
+    }
+
+    .sidenav > a
+    {
+        padding-top: 2vh;
+    }
+}

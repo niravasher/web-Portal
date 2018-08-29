@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<script type="text/javascript">
+    $(document).ready(function () {
+        toggleFields();
+        $("#sport").change(function () {
+            toggleFields();
+        });
+        $("#description").change(function () {
+            toggleFields();
+        });
+    });
+</script>
+<body>
+    <div class="header">
+        <img src="bsom.png">
+        <h1>BOSM Admin Panel</h1>
+        <button onclick="mainApp.logOut()">Log Out</button>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="#" class="home">Home</a>
+        <a href="file:///C:/html_css_pages/web%20portal/registerEvents.html" class="register-events">Register Events</a>
+        <a href="#" class="upload-results">Upload Results</a>
+        <a href="#" class="update-event">Update Event</a>
+        <a href="#" class="update-result">Update Result</a>
+        <a href="#" class="display-message">Display Message</a>
+        <a href="#" class="register-college">Register College</a>
+        <a href="#" class="register-venue">Register Venue</a>
+        <a href="#" class="delete-event">Delete Event</a>
+    </div>
+
+    <div class="container" id="registerEventsPage" style="width: 70vw;">
+        <h2>Register Event</h2>
+        <form>
+            <div class="form-group" id="descip">
+                <label for="description">description:</label>
+                <select class="form-control" id="description">
+                    <option>Round 1</option>
+                    <option>Round 2</option>
+                    <option>Round 3</option>
+                    <option>Round 4</option>
+                    <option>Quarterfinal</option>
+                    <option>Semifinal</option>
+                    <option>Final</option>
+                    <option value="SomethingElse">Others</option>
+                </select>
+            </div>
+            <div class="form-group" id="others">
+                <label for="others">Other Round:</label><br>
+                <input type="text" name="others" style="width: 67.5vw;height: 5vh;">
+            </div>
+            <div class="form-group" id="spo">
+                <label for="sport">Sport:</label>
+                <select class="form-control" id="sport">
+                    <option value="Taekwondo">Taekwondo</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Swimming">Swimming</option>
+                    <option value="Badminton">Badminton</option>
+                    <option value="Basketball">Basketball</option>
+                    <option value="Cricket">Cricket</option>
+                    <option value="Football">Football</option>
+                    <option value="Hockey">Hockey</option>
+                    <option value="Squash">Squash</option>
+                    <option value="Tennis">Tennis</option>
+                    <option value="TableTennis">Table Tennis</option>
+                    <option value="Volleyball">Volleyball</option>
+                    <option value="Carrom">Carrom</option>
+                    <option value="Chess">Chess</option>
+                    <option value="Powerlifting">Powerlifting</option>
+                    <option value="Pool">Pool</option>
+                    <option value="Online">Online</option>
+                    <option value="Misc">Misc</option>
+                </select>
+            </div>
+            <div class="form-group" id="eve">
+                <label for="event">Date of Event:</label>
+                <select class="form-control" id="event">
+                    <option>21st September</option>
+                    <option>22nd September</option>
+                    <option>23rd September</option>
+                    <option>24th September</option>
+                </select>
+            </div>
+            <div class="form-group" id="timing">
+                <label for="time">Time:</label><br>
+                <input type="time" name="time" id="time" style="width: 67.5vw;height: 5vh;">
+            </div>
+            <div class="form-group" id="place">
+                <label for="venue">Venue:</label>
+                <select class="form-control" id="venue">
+                    <option>Old Sac</option>
+                    <option>Gym G</option>
+                    <option>SAC</option>
+                    <option>SR Grounds</option>
+                    <option>MED_C Ground</option>
+                    <option>Swimming Pool</option>
+                </select>
+            </div>
+            <div class="form-group" id="gend">
+                <label for="gender">Gender:</label><br>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio">Boys
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio">Girls
+                </label>
+            </div>
+            <div class="form-group" id="firstTeam">
+                <label for="teamA">Team A:</label>
+                <select class="form-control" id="teamA">
+                    <option>Bits Pilani</option>
+                    <option>BKBIET</option>
+                    <option>JECRC</option>
+                    <option>Venky</option>
+                    <option>TIT&S</option>
+                    <option>RAIT</option>
+                </select>
+            </div>
+            <div class="form-group" id="secondTeam">
+                <label for="teamB">Team B:</label>
+                <select class="form-control" id="teamB">
+                    <option>Bits Pilani</option>
+                    <option>BKBIET</option>
+                    <option>JECRC</option>
+                    <option>Venky</option>
+                    <option>TIT&S</option>
+                    <option>RAIT</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+    <script type="text/javascript" src="fireBase.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript">
+        function toggleFields() {
+            if ($("#sport").val() === "Athletics" || $("#sport").val() === "Swimming") {
+                $("#gend").show();
+                $("#firstTeam").hide();
+                $("#secondTeam").hide();
+                $("#others").hide();
+            }
+            
+            else if ($("#sport").val() === "Badminton" || $("#sport").val() === "Basketball" || $("#sport").val() === "Football" || $("#sport").val() === "Tennis" || $("#sport").val() === "TableTennis" || $("#sport").val() === "Volleyball") {
+                $("#gend").show();
+                $("#firstTeam").show();
+                $("#secondTeam").show();
+                $("#others").hide();
+            }
+
+            else if ($("#sport").val() === "Cricket" || $("#sport").val() === "Hockey" || $("#sport").val() === "Squash" || $("#sport").val() === "Carrom" || $("#sport").val() === "Chess" || $("#sport").val() === "Pool") {
+                $("#gend").hide();
+                $("#firstTeam").show();
+                $("#secondTeam").show();
+                $("#others").hide();
+            }
+
+            else if ($("#description").val() === "SomethingElse") {
+                $("#others").show();
+                $("#gend").hide();
+                $("#firstTeam").hide();
+                $("#secondTeam").hide();
+            }
+
+            else {
+                $("#gend").hide();
+                $("#firstTeam").hide();
+                $("#secondTeam").hide();
+                $("#others").hide();
+            }
+        }
+    </script>
+</body>
+</html>

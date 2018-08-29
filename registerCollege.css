@@ -1,0 +1,147 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header
+{
+    width: 100vw;
+    height: 12vh;
+    background: #eee;
+    z-index: 2;
+}
+
+.header > img
+{
+    width: 5.7vw;
+}
+
+.header > h1
+{
+    position: absolute;
+    top: 1vh;
+    left: 7vw;
+    font-size: 25px;
+}
+
+.header > button
+{
+    position: absolute;
+    left: 90vw;
+    top: 3vh;
+    width: 6vw;
+    height: 5vh;
+    border: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    background: rgb(51,51,51);
+    color: white;
+    box-shadow: 2px 2px 2px grey;
+}
+
+.sidenav
+{
+    min-height: 88vh;
+    max-height: 115vh;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    position: absolute;
+    top: 12vh;
+    left: 0;
+    background-color: rgb(51,51,51);
+    overflow-x: hidden;
+    padding-top: 10px;
+}
+
+.sidenav a
+{
+    padding-top: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    color: black;
+    width: 210px;
+    text-align: center;
+    margin-bottom: 4px;
+    height: 8vh;
+}
+
+.sidenav > a:nth-child(1)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(2)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(3)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(4)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(5)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(6)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(7)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(8)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.sidenav > a:nth-child(9)
+{
+    background: #eee;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.container
+{
+    position: absolute;
+    top: 12vh;
+    left: 20vw;
+}
+
+.container > h2
+{
+    overflow: hidden;
+}

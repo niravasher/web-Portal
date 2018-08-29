@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="uploadResults.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<script type="text/javascript">
+    $(document).ready(function () {
+        changeFields();
+        $("#sport").change(function () {
+            changeFields();
+        });
+        $("#eventBad").change(function () {
+            changeFields();
+            console.log('nirav');
+        });
+    });
+</script>
+<body>
+
+    <div class="header">
+        <img src="bsom.png">
+        <h1>BOSM Admin Panel</h1>
+        <button onclick="mainApp.logOut()">Log Out</button>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="file:///C:/html_css_pages/web%20portal/homePage.html" class="home">Home</a>
+        <a href="file:///C:/html_css_pages/web%20portal/registerEvents.html" class="register-events">Register Events</a>
+        <a href="file:///C:/html_css_pages/web%20portal/uploadResults.html" class="upload-results">Upload Results</a>
+        <a href="file:///C:/html_css_pages/web%20portal/updateEvent.html" class="update-event">Update Event</a>
+        <a href="#" class="update-result">Update Result</a>
+        <a href="file:///C:/html_css_pages/web%20portal/displayMessage.html" class="display-message">Display Message</a>
+        <a href="file:///C:/html_css_pages/web%20portal/registerCollege.html" class="register-college">Register College</a>
+        <a href="file:///C:/html_css_pages/web%20portal/registerVenue.html" class="register-venue">Register Venue</a>
+        <a href="#" class="delete-event">Delete Event</a>
+    </div>
+
+    <div class="container" id="registerEventsPage" style="width: 70vw;">
+        <h2>Result</h2>
+        <form>
+            <div class="form-group" id="spo">
+                <label for="sport">Sport:</label>
+                <select class="form-control" id="sport">
+                    <option value="Taekwondo">Taekwondo</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Swimming">Swimming</option>
+                    <option value="Badminton">Badminton</option>
+                    <option value="Basketball">Basketball</option>
+                    <option value="Cricket">Cricket</option>
+                    <option value="Football">Football</option>
+                    <option value="Hockey">Hockey</option>
+                    <option value="Squash">Squash</option>
+                    <option value="Tennis">Tennis</option>
+                    <option value="TableTennis">Table Tennis</option>
+                    <option value="Volleyball">Volleyball</option>
+                    <option value="Carrom">Carrom</option>
+                    <option value="Chess">Chess</option>
+                    <option value="Powerlifting">Powerlifting</option>
+                    <option value="Pool">Pool</option>
+                    <option value="Online">Online</option>
+                    <option value="Misc">Misc</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventAthletics">
+                <label for="eventAthletics">Select Event:</label>
+                <select class="form-control" id="eventAthletic">
+                    <option>Round 1: Shotput Boys</option>
+                    <option>Round 1: 200m Boys</option>
+                    <option>Round 1: 100m Boys</option>
+                    <option>Round 1: Shotput Girls</option>
+                    <option>Round 1: 200m Girls</option>
+                    <option>Round 1: 100m Girls</option>
+                    <option>Round 1: 200m Category Boys</option>
+                    <option>Round 1: SHOTPUT Boys</option>
+                    <option>Round 1: 100m Category Boys</option>
+                    <option>Round 1: Throwing Event Discuss Girls</option>
+                    <option>Round 1: Running Event 1500m Girls</option>
+                    <option>Final 200m Girls</option>
+                    <option>Triple Jump Girls</option>
+                    <option>Running Event 100m Girls</option>
+                    <option>Round 1: Discuss Throw Boys</option>
+                    <option>Round 1: Javelin Boys</option>
+                    <option>Final 200m Boys</option>
+                    <option>Round 1: 800m Boys</option>
+                    <option>Round 1: Triple Jump Boys</option>
+                    <option>Final 100m Boys</option>
+                    <option>Round 1: Boys</option>
+                    <option>Round 1: Boys</option>
+                    <option>Round 1: Boys</option>
+                    <option>Round 1: Girls</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventSwimming">
+                <label for="eventAthletics">Select Event:</label>
+                <select class="form-control" id="eventSwim">
+                    <option>Heat- 4x50m Medley Relay Boys</option>
+                    <option>Heats- 4x50m Medley Relay Boys</option>
+                    <option>Time trials- 200m Freestyle Boys</option>
+                    <option>Finals- 50 Butterfly Boys</option>
+                    <option>Time Trials- 100m BreastStroke Boys</option>
+                    <option>Heat- 50m Butterfly Boys</option>
+                    <option>Heats- 100m Backstroke Boys</option>
+                    <option>Time Trials: 100m Freestyle Boys</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventBadminton">
+                <label for="eventBadminton">Select Event:</label>
+                <select class="form-control" id="eventBad">
+                    <option>Sri Lanka B vs JAYPEE</option>
+                    <option>Round 1: Bits B vs GOVT Eng Col</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventBasketball">
+                <label for="eventBasketball">Select Event:</label>
+                <select class="form-control" id="eventBasket">
+                    <option>Round 1: Manipal vs Bhagat Singh</option>
+                    <option>Round 1: Bits B vs GOVT Eng Col</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventCricket">
+                <label for="eventCricket">Select Event:</label>
+                <select class="form-control" id="eventCric">
+                    <option>Round 1: SRM Delhi vs Mahavir Jain</option>
+                    <option>Round 1: Bits Pilani vs Bits Pilani</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventFootball">
+                <label for="eventFootball">Select Event:</label>
+                <select class="form-control" id="eventFoot">
+                    <option>Round 1: SRM Delhi vs Mahavir Jain</option>
+                    <option>Round 1: Bits Pilani vs Bits Pilani</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventHockey">
+                <label for="eventHockey">Select Event:</label>
+                <select class="form-control" id="eventHock">
+                    <option>Round 1: SRM Delhi vs Mahavir Jain</option>
+                    <option>Round 1: Bits Pilani vs Bits Pilani</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventSquash">
+                <label for="eventSquash">Select Event:</label>
+                <select class="form-control" id="eventSqua">
+                    <option>Round 1: SRM Delhi vs Mahavir Jain</option>
+                    <option>Round 1: Bits Pilani vs Bits Pilani</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventTennis">
+                <label for="eventTennis">Select Event:</label>
+                <select class="form-control" id="eventTen">
+                    <option>Round 1: SRM Delhi vs Mahavir Jain</option>
+                    <option>Round 1: Bits Pilani vs Bits Pilani</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventTableTennis">
+                <label for="eventTableTennis">Select Event:</label>
+                <select class="form-control" id="eventTt">
+                    <option>Round 1: SRM Delhi vs Mahavir Jain</option>
+                    <option>Round 1: Bits Pilani vs Bits Pilani</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventVolleyball">
+                <label for="eventVolleyball">Select Event:</label>
+                <select class="form-control" id="eventvolley">
+                    <option>Round 1: SRM Delhi vs Mahavir Jain</option>
+                    <option>Round 1: Bits Pilani vs Bits Pilani</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventCarrom">
+                <label for="eventCarrom">Select Event:</label>
+                <select class="form-control" id="eventCar">
+                    <option>Round 1: SRM Delhi vs Mahavir Jain</option>
+                    <option>Round 1: Bits Pilani vs Bits Pilani</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventChess">
+                <label for="eventChess">Select Event:</label>
+                <select class="form-control" id="eventChe">
+                    <option>Round 1: SRM Delhi vs Mahavir Jain</option>
+                    <option>Round 1: Bits Pilani vs Bits Pilani</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventPowerlifting">
+                <label for="eventPowerlifting">Select Event:</label>
+                <select class="form-control" id="eventlifting">
+                    <option>Round 1: SRM Delhi vs Mahavir Jain</option>
+                    <option>Round 1: Bits Pilani vs Bits Pilani</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventPool">
+                <label for="eventPool">Select Event:</label>
+                <select class="form-control" id="eventpool">
+                    <option>Round 1: SRM Delhi vs Mahavir Jain</option>
+                    <option>Round 1: Bits Pilani vs Bits Pilani</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventOnline">
+                <label for="eventOnline">Select Event:</label>
+                <select class="form-control" id="eventOnli">
+                    <option>Round 1: SRM Delhi vs Mahavir Jain</option>
+                    <option>Round 1: Bits Pilani vs Bits Pilani</option>
+                </select>
+            </div>
+            <div class="form-group" id="eventMisc">
+                <label for="eventMisc">Select Event:</label>
+                <select class="form-control" id="eventMi">
+                    <option>Round 1: SRM Delhi vs Mahavir Jain</option>
+                    <option>Round 1: Bits Pilani vs Bits Pilani</option>
+                </select>
+            </div>
+            <div class="form-group" id="firstWinner">
+                <label for="firstWinner">First Winner:</label>
+                <input type="text" class="form-control" name="firstWinner">
+            </div>
+            <div class="form-group" id="secondWinner">
+                <label for="secondWinner">Second Winner:</label>
+                <input type="text" class="form-control" name="secondWinner">
+            </div>
+            <div class="form-group" id="thirdWinner">
+                <label for="thirdWinner">Third Winner:</label>
+                <input type="text" name="thirdWinner" class="form-control">
+            </div>
+            <div class="form-group" id="firstScore">
+                <label for="firstScore">First Score:</label>
+                <input type="text" name="firstScore" class="form-control">
+            </div>
+            <div class="form-group" id="secondScore">
+                <label for="secondScore">Second Score:</label>
+                <input type="text" name="secondScore" class="form-control">
+            </div>
+            <div class="form-group" id="thirdScore">
+                <label for="thirdScore">Third Score:</label>
+                <input type="text" name="thirdScore" class="form-control">
+            </div>
+            <div class="form-group" id="teamAScore">
+                <label for="teamAScore">Team A Score:</label>
+                <input type="text" name="teamAScore" class="form-control">
+            </div>
+            <div class="form-group" id="teamBScore">
+                <label for="teamBScore">Team B Score:</label>
+                <input type="text" name="teamBScore" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="fireBase.js"></script>
+    <script type="text/javascript" src="registerEvents.js"></script>
+    <script type="text/javascript">
+        function changeFields() {
+            if ($("#sport").val() === "Taekwondo") {
+                $("#eventSwimming").hide();
+                $("#eventAthletics").hide();
+                $("#eventBadminton").hide();
+                $("#eventBasketball").hide();
+                $("#eventCricket").hide();
+                $("#eventFootball").hide();
+                $("#eventHockey").hide();
+                $("#eventSquash").hide();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").hide();
+                $("#eventChess").hide();
+                $("#eventPool").hide();
+                $("#firstWinner").hide();
+                $("#secondWinner").hide();
+                $("#thirdWinner").hide();
+                $("#firstScore").hide();
+                $("#secondScore").hide();
+                $("#thirdScore").hide();
+                $("#teamAScore").hide();
+                $("#teamBScore").hide();
+            }
+            else if ($("#sport").val() === "Athletics") {
+                $("#eventAthletics").show();
+                $("#eventSwimming").hide();
+                $("#eventBadminton").hide();
+                $("#eventBasketball").hide();
+                $("#eventCricket").hide();
+                $("#eventFootball").hide();
+                $("#eventHockey").hide();
+                $("#eventSquash").hide();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").hide();
+                $("#eventChess").hide();
+                $("#eventPool").hide();
+                $("#firstWinner").show();
+                $("#secondWinner").show();
+                $("#thirdWinner").show();
+                $("#firstScore").show();
+                $("#secondScore").show();
+                $("#thirdScore").show();
+                $("#teamAScore").hide();
+                $("#teamBScore").hide();
+            }
+            else if ($("#sport").val() === "Swimming") {
+                $("#eventSwimming").show();
+                $("#eventAthletics").hide();
+                $("#eventBadminton").hide();
+                $("#eventBasketball").hide();
+                $("#eventCricket").hide();
+                $("#eventFootball").hide();
+                $("#eventHockey").hide();
+                $("#eventSquash").hide();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").hide();
+                $("#eventChess").hide();
+                $("#eventPool").hide();
+                $("#firstWinner").show();
+                $("#secondWinner").show();
+                $("#thirdWinner").show();
+                $("#firstScore").show();
+                $("#secondScore").show();
+                $("#thirdScore").show();
+                $("#teamAScore").hide();
+                $("#teamBScore").hide();
+            }
+            else if ($("#sport").val() === "Badminton") {
+                $("#eventSwimming").hide();
+                $("#eventAthletics").hide();
+                $("#eventBadminton").show();
+                $("#eventBasketball").hide();
+                $("#eventCricket").hide();
+                $("#eventFootball").hide();
+                $("#eventHockey").hide();
+                $("#eventSquash").hide();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").hide();
+                $("#eventChess").hide();
+                $("#eventPool").hide();
+                $("#firstWinner").hide();
+                $("#secondWinner").hide();
+                $("#thirdWinner").hide();
+                $("#firstScore").hide();
+                $("#secondScore").hide();
+                $("#thirdScore").hide();
+                $("#teamAScore").show();
+                $("#teamBScore").show();
+            }
+            else if ($("#sport").val() === "Basketball") {
+                $("#eventSwimming").hide();
+                $("#eventAthletics").hide();
+                $("#eventBadminton").hide();
+                $("#eventBasketball").show();
+                $("#eventCricket").hide();
+                $("#eventFootball").hide();
+                $("#eventHockey").hide();
+                $("#eventSquash").hide();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").hide();
+                $("#eventChess").hide();
+                $("#eventPool").hide();
+                $("#firstWinner").hide();
+                $("#secondWinner").hide();
+                $("#thirdWinner").hide();
+                $("#firstScore").hide();
+                $("#secondScore").hide();
+                $("#thirdScore").hide();
+                $("#teamAScore").show();
+                $("#teamBScore").show();
+            }
+            else if ($("#sport").val() === "Cricket") {
+                $("#eventSwimming").hide();
+                $("#eventAthletics").hide();
+                $("#eventBadminton").hide();
+                $("#eventBasketball").hide();
+                $("#eventCricket").show();
+                $("#eventFootball").hide();
+                $("#eventHockey").hide();
+                $("#eventSquash").hide();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").hide();
+                $("#eventChess").hide();
+                $("#eventPool").hide();
+                $("#firstWinner").hide();
+                $("#secondWinner").hide();
+                $("#thirdWinner").hide();
+                $("#firstScore").hide();
+                $("#secondScore").hide();
+                $("#thirdScore").hide();
+                $("#teamAScore").show();
+                $("#teamBScore").show();
+            }
+            else if ($("#sport").val() === "Football") {
+                $("#eventSwimming").hide();
+                $("#eventAthletics").hide();
+                $("#eventBadminton").hide();
+                $("#eventBasketball").hide();
+                $("#eventCricket").hide();
+                $("#eventFootball").show();
+                $("#eventHockey").hide();
+                $("#eventSquash").hide();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").hide();
+                $("#eventChess").hide();
+                $("#eventPool").hide();
+                $("#firstWinner").hide();
+                $("#secondWinner").hide();
+                $("#thirdWinner").hide();
+                $("#firstScore").hide();
+                $("#secondScore").hide();
+                $("#thirdScore").hide();
+                $("#teamAScore").show();
+                $("#teamBScore").show();
+            }
+            else if ($("#sport").val() === "Hockey") {
+                $("#eventSwimming").hide();
+                $("#eventAthletics").hide();
+                $("#eventBadminton").hide();
+                $("#eventBasketball").hide();
+                $("#eventCricket").hide();
+                $("#eventFootball").hide();
+                $("#eventHockey").show();
+                $("#eventSquash").hide();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").hide();
+                $("#eventChess").hide();
+                $("#eventPool").hide();
+                $("#firstWinner").hide();
+                $("#secondWinner").hide();
+                $("#thirdWinner").hide();
+                $("#firstScore").hide();
+                $("#secondScore").hide();
+                $("#thirdScore").hide();
+                $("#teamAScore").show();
+                $("#teamBScore").show();
+            }
+            else if ($("#sport").val() === "Squash") {
+                $("#eventSwimming").hide();
+                $("#eventAthletics").hide();
+                $("#eventBadminton").hide();
+                $("#eventBasketball").hide();
+                $("#eventCricket").hide();
+                $("#eventFootball").hide();
+                $("#eventHockey").hide();
+                $("#eventSquash").show();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").hide();
+                $("#eventChess").hide();
+                $("#eventPool").hide();
+                $("#firstWinner").hide();
+                $("#secondWinner").hide();
+                $("#thirdWinner").hide();
+                $("#firstScore").hide();
+                $("#secondScore").hide();
+                $("#thirdScore").hide();
+                $("#teamAScore").show();
+                $("#teamBScore").show();
+            }
+            else if ($("#sport").val() === "Tennis") {
+                $("#eventSwimming").hide();
+                $("#eventAthletics").hide();
+                $("#eventBadminton").hide();
+                $("#eventBasketball").hide();
+                $("#eventCricket").hide();
+                $("#eventFootball").hide();
+                $("#eventHockey").hide();
+                $("#eventSquash").hide();
+                $("#eventTennis").show();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").hide();
+                $("#eventChess").hide();
+                $("#eventPool").hide();
+                $("#firstWinner").hide();
+                $("#secondWinner").hide();
+                $("#thirdWinner").hide();
+                $("#firstScore").hide();
+                $("#secondScore").hide();
+                $("#thirdScore").hide();
+                $("#teamAScore").show();
+                $("#teamBScore").show();
+            }
+            else if ($("#sport").val() === "TableTennis") {
+                $("#eventSwimming").hide();
+                $("#eventAthletics").hide();
+                $("#eventBadminton").hide();
+                $("#eventBasketball").hide();
+                $("#eventCricket").hide();
+                $("#eventFootball").hide();
+                $("#eventHockey").hide();
+                $("#eventSquash").hide();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").show();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").hide();
+                $("#eventChess").hide();
+                $("#eventPool").hide();
+                $("#firstWinner").hide();
+                $("#secondWinner").hide();
+                $("#thirdWinner").hide();
+                $("#firstScore").hide();
+                $("#secondScore").hide();
+                $("#thirdScore").hide();
+                $("#teamAScore").show();
+                $("#teamBScore").show();
+            }
+            else if ($("#sport").val() === "Volleyball") {
+                $("#eventSwimming").hide();
+                $("#eventAthletics").hide();
+                $("#eventBadminton").hide();
+                $("#eventBasketball").hide();
+                $("#eventCricket").hide();
+                $("#eventFootball").hide();
+                $("#eventHockey").hide();
+                $("#eventSquash").hide();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").show();
+                $("#eventCarrom").hide();
+                $("#eventChess").hide();
+                $("#eventPool").hide();
+                $("#firstWinner").hide();
+                $("#secondWinner").hide();
+                $("#thirdWinner").hide();
+                $("#firstScore").hide();
+                $("#secondScore").hide();
+                $("#thirdScore").hide();
+                $("#teamAScore").show();
+                $("#teamBScore").show();
+            }
+            else if ($("#sport").val() === "Carrom") {
+                $("#eventSwimming").hide();
+                $("#eventAthletics").hide();
+                $("#eventBadminton").hide();
+                $("#eventBasketball").hide();
+                $("#eventCricket").hide();
+                $("#eventFootball").hide();
+                $("#eventHockey").hide();
+                $("#eventSquash").hide();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").show();
+                $("#eventChess").hide();
+                $("#eventPool").hide();
+                $("#firstWinner").hide();
+                $("#secondWinner").hide();
+                $("#thirdWinner").hide();
+                $("#firstScore").hide();
+                $("#secondScore").hide();
+                $("#thirdScore").hide();
+                $("#teamAScore").show();
+                $("#teamBScore").show();
+            }
+            else if ($("#sport").val() === "Chess") {
+                $("#eventSwimming").hide();
+                $("#eventAthletics").hide();
+                $("#eventBadminton").hide();
+                $("#eventBasketball").hide();
+                $("#eventCricket").hide();
+                $("#eventFootball").hide();
+                $("#eventHockey").hide();
+                $("#eventSquash").hide();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").hide();
+                $("#eventChess").show();
+                $("#eventPool").hide();
+                $("#firstWinner").hide();
+                $("#secondWinner").hide();
+                $("#thirdWinner").hide();
+                $("#firstScore").hide();
+                $("#secondScore").hide();
+                $("#thirdScore").hide();
+                $("#teamAScore").show();
+                $("#teamBScore").show();
+            }
+            else if ($("#sport").val() === "Pool") {
+                $("#eventSwimming").hide();
+                $("#eventAthletics").hide();
+                $("#eventBadminton").hide();
+                $("#eventBasketball").hide();
+                $("#eventCricket").hide();
+                $("#eventFootball").hide();
+                $("#eventHockey").hide();
+                $("#eventSquash").hide();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").hide();
+                $("#eventChess").hide();
+                $("#eventPool").show();
+                $("#firstWinner").hide();
+                $("#secondWinner").hide();
+                $("#thirdWinner").hide();
+                $("#firstScore").hide();
+                $("#secondScore").hide();
+                $("#thirdScore").hide();
+                $("#teamAScore").show();
+                $("#teamBScore").show();
+            }
+            else {
+                $("#eventAthletics").hide();
+                $("#eventSwimming").hide();
+                $("#eventBadminton").hide();
+                $("#eventCricket").hide();
+                $("#eventFootball").hide();
+                $("#eventHockey").hide();
+                $("#eventSquash").hide();
+                $("#eventTennis").hide();
+                $("#eventTableTennis").hide();
+                $("#eventVolleyball").hide();
+                $("#eventCarrom").hide();
+                $("#eventChess").hide();
+                $("#firstWinner").hide();
+                $("#secondWinner").hide();
+                $("#thirdWinner").hide();
+                $("#firstScore").hide();
+                $("#secondScore").hide();
+                $("#thirdScore").hide();
+                $("#teamAScore").hide();
+                $("#teamBScore").hide();
+            }
+        }
+    </script>
+</body>
+</html>

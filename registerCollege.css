@@ -47,7 +47,7 @@
 {
     min-height: 88vh;
     max-height: 115vh;
-    width: 250px;
+    width: 20vw;
     position: fixed;
     z-index: 1;
     position: absolute;
@@ -65,7 +65,10 @@
     font-size: 20px;
     display: block;
     color: black;
-    width: 210px;
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     margin-bottom: 4px;
     height: 8vh;
@@ -74,63 +77,54 @@
 .sidenav > a:nth-child(1)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(2)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(3)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(4)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(5)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(6)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(7)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(8)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(9)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
@@ -144,4 +138,132 @@
 .container > h2
 {
     overflow: hidden;
+}
+
+@media screen and (max-width: 1050px)
+{
+    .header > img
+    {
+        width: 15vw;
+    }
+
+    .header > h1
+    {
+        left: 15vw;
+        top: 3vh;
+        font-size: 30px;
+    }
+
+    .header > button
+    {
+        width: 20vw;
+        left: 75vw;
+        font-size: 25px;
+    }
+
+    .sidenav > a
+    {
+        padding-top: 40px;
+        font-size: 22px;
+    }
+
+    .container > h2
+    {
+        font-size: 40px;
+    }
+
+    label
+    {
+        font-size: 25px;
+    }
+
+    .form-control
+    {
+        width: 60vw;
+        height: 10vh;
+    }
+}
+
+@media screen and (max-width: 800px)
+{
+    .sidenav > a
+    {
+        padding-top: 10px;
+    }
+}
+
+@media screen and (max-width: 450px)
+{
+    .header > img
+    {
+        width: 20vw;
+    }
+
+    .header > h1
+    {
+        font-size: 20px;
+        left: 20vw;
+    }
+
+    .header > button
+    {
+        left: 70vw;
+        width: 20vw;
+        font-size: 15px;
+    }
+
+    .sidenav > a
+    {
+        font-size: 12px;
+    }
+
+    .container > h2
+    {
+        font-size: 25px;
+    }
+
+    label
+    {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 415px)
+{
+    .sidenav > a
+    {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 380px)
+{
+    .sidenav > a
+    {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 370px)
+{
+    .header > h1
+    {
+        font-size: 15px;
+        top: 1vh;
+    }
+
+    .container > h2
+    {
+        font-size: 20px;
+    }
+
+    label
+    {
+        font-size: 15px;
+    }
+
+    .sidenav > a
+    {
+        font-size: 12px;
+    }
 }

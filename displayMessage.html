@@ -2,8 +2,7 @@
 <html>
 <head>
     <title>Display Message</title>
-    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
-    <link rel="stylesheet" type="text/css" href="registerEvents.css">
+    <link rel="stylesheet" type="text/css" href="displayMessage.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +15,7 @@
     <div class="header">
         <img src="bsom.png">
         <h1>BOSM Admin Panel</h1>
-        <button onclick="mainApp.logOut()">Log Out</button>
+        <button>Log Out</button>
     </div>
 
     <div id="mySidenav" class="sidenav">
@@ -36,14 +35,12 @@
         <form>
             <div class="form-group" id="message">
                 <label for="message">Message:</label>
-                <input type="text" name="message" class="form-control">
+                <input class="form-control" id="displayMessage">
             </div>
+
         </form>
         <button type="submit" class="btn btn-default">Submit</button>
     </div>
-
-    <script type="text/javascript" src="fireBase.js"></script>
-    <script type="text/javascript" src="registerEvents.js"></script>
 
 </body>
 </html>

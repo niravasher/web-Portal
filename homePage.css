@@ -52,7 +52,7 @@
 {
     min-height: 88vh;
     max-height: 115vh;
-    width: 250px;
+    width: 20vw;
     position: fixed;
     z-index: 1;
     position: absolute;
@@ -70,72 +70,66 @@
     font-size: 20px;
     display: block;
     color: black;
-    width: 210px;
+    width: 90%;
     text-align: center;
     margin-bottom: 4px;
     height: 8vh;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .sidenav > a:nth-child(1)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(2)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(3)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(4)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(5)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(6)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(7)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(8)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
 .sidenav > a:nth-child(9)
 {
     background: #eee;
-    border-radius: 0px 15px 15px 0px;
     box-shadow: 5px 5px 5px black;
 }
 
@@ -190,6 +184,20 @@
         left: 40vw;
         overflow-y: hidden;
         transform: scale(1.5);
+    }
+}
+
+@media screen and (max-width: 800px)
+{
+    .header > button
+    {
+        width: 20vw;
+        left: 75vw;
+    }
+
+    .sidenav > a
+    {
+        font-size: 18px;
     }
 }
 
